@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "model_manage"
   gem.homepage = "http://github.com/7korobi/model_manage"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{モデル管理情報付与}
+  gem.description = %Q{モデル、フィールドといった情報へ簡単アクセスすることを目的に開発しています。}
   gem.email = "7korobi@gmail.com"
   gem.authors = ["ななころび"]
   # dependencies defined in Gemfile
