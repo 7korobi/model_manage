@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "lib/model_manage/base.rb",
     "lib/model_manage/mongoid.rb",
     "lib/model_manage/rails.rb",
+    "model_manage.gemspec",
     "test/helper.rb",
     "test/test_model_manage.rb"
   ]
