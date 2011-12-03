@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "model_manage"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["\u{306a}\u{306a}\u{3053}\u{308d}\u{3073}"]
@@ -26,7 +26,9 @@ Gem::Specification.new do |s|
     "lib/model_manage.rb",
     "lib/model_manage/active_record.rb",
     "lib/model_manage/base.rb",
+    "lib/model_manage/bitfield.rb",
     "lib/model_manage/mongoid.rb",
+    "lib/model_manage/mongoid_as_active_record.rb",
     "lib/model_manage/rails.rb",
     "model_manage.gemspec",
     "test/helper.rb",

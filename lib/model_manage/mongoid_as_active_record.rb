@@ -57,7 +57,7 @@ module ModelManage
 end
 
 class Mongoid::Relations::Metadata
-  include ModelManage::Mongoid::Metadata
+  include ModelManage::Metadata
 end
 
 module ActiveRecord
