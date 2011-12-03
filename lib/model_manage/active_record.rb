@@ -1,3 +1,5 @@
+if defined?(ActiveRecord::Base)
+
 module ActiveRecord
   class Base
   	def self.inherited(child)
@@ -10,3 +12,4 @@ module ActiveRecord
   end
 end
 
+end

@@ -1,3 +1,4 @@
+if defined?(Mongoid::Document)
 
 class Mongoid::Relations::Metadata
   attr_accessor :form
@@ -58,3 +59,4 @@ module ModelManage
   end
 end
 
+end 

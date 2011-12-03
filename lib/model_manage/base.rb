@@ -48,7 +48,7 @@ module ModelManage
           form_attributes.merge!(validates)
         end
 
-        forms[name] = OpenStruct.new(form_attributes)
+        forms[name] = ::OpenStruct.new(form_attributes)
       end
 
       def base.relation_form_set(name, options = {})
