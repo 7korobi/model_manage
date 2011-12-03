@@ -17,7 +17,6 @@ module Mongoid
       base.class_eval do
         include ModelManage::Base
         include ModelManage::Mongoid
-        include MongoidAsActiveRecord::Base
       end
     end
   end

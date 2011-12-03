@@ -1,8 +1,3 @@
-MongoidAsActiveRecord
-  module Base
-  end
-end
-
 require 'ostruct'
 require 'model_manage/mongoid'
 require 'model_manage/active_record'
