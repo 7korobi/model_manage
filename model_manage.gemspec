@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "model_manage"
-  s.version = "0.1.6"
+  s.version = "0.1.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["\u{306a}\u{306a}\u{3053}\u{308d}\u{3073}"]
