@@ -2,23 +2,24 @@ module ModelManage
   module Base
     def self.included(base)
       base.class_eval do
+        forms_field = superclass.forms.dup rescue {}.with_indifferent_access
+        FORMS = forms_field
       end
-
-      def base.forms
+    end
+  end
+  module ClassMethods
+    def forms
         const_get(:FORMS)
-      end
+    end
 
-      def base.key?(key)
+    def key?(key)
         const_get(:KEYS).member? key.to_s
-      rescue
+    rescue
         const_set :KEYS, []
         false
-      end
+    end
 
-      forms_field = base.superclass.forms.dup rescue {}.with_indifferent_access
-      base.const_set :FORMS, forms_field
-
-      def base.field(name, options = {})
+    def field(name, options = {})
         min =   1
 
         validates = {}
@@ -49,9 +50,9 @@ module ModelManage
         end
 
         forms[name] = ::OpenStruct.new(form_attributes)
-      end
+    end
 
-      def base.relation_form_set(name, options = {})
+    def relation_form_set(name, options = {})
         relation_attributes = {
           owner:    self,
           name:     name.to_s,
@@ -59,7 +60,6 @@ module ModelManage
         }.tap{|o| o[:data] = o.dup }
         relation = relations[name.to_s]
         relation.form = OpenStruct.new(relation_attributes)
-      end
     end
   end
 end
