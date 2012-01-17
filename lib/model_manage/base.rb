@@ -21,10 +21,9 @@ module ModelManage
     end
 
     def field(name, options = {})
-      p [:field, name]
+      super
 
       min =   1
-
       validates = {}
       validates[:in] = options.delete(:in)  || options.delete(:within)
       if options[:limit] && (! validates[:in])
@@ -34,7 +33,6 @@ module ModelManage
       validates[:allow_nil  ] = options.delete(:allow_nil)   || false
       validates[:allow_blank] = options.delete(:allow_blank) || false
 
-      super
       null_ok = validates[:allow_nil] || validates[:allow_blank]
       form_attributes = {
         owner:   self,
@@ -52,7 +50,7 @@ module ModelManage
         form_attributes.merge!(validates)
       end
 
-      forms[name] = ::OpenStruct.new(form_attributes)
+      forms[name] = OpenStruct.new(form_attributes)
     end
 
     def relation_form_set(name, options = {})
@@ -63,6 +61,8 @@ module ModelManage
       }.tap{|o| o[:data] = o.dup }
       relation = relations[name.to_s]
       relation.form = OpenStruct.new(relation_attributes)
+
+      forms.delete(name)
     end
   end
 end
