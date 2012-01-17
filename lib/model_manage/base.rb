@@ -61,8 +61,6 @@ module ModelManage
       }.tap{|o| o[:data] = o.dup }
       relation = relations[name.to_s]
       relation.form = OpenStruct.new(relation_attributes)
-
-      forms.delete(name)
     end
   end
 end
