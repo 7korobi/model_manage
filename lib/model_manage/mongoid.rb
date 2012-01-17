@@ -9,8 +9,8 @@ module Mongoid
       end
 
       base.class_eval do
-        include ModelManage::Base
         extend  ModelManage::Mongoid::ClassMethods
+        include ModelManage::Base
       end
     end
   end

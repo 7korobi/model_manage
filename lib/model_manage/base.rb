@@ -2,8 +2,9 @@ module ModelManage
   module Base
     def self.included(base)
       base.class_eval do
+        extend  ModelManage::ClassMethods
         forms_field = superclass.forms.dup rescue {}.with_indifferent_access
-        FORMS = forms_field
+        base.const_set :FORMS, forms_field
       end
     end
   end
