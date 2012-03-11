@@ -27,22 +27,40 @@ module ModelManage
         const_set :KEYS, keys.map(&:to_s)
         super
       end
+      def belongs_to(name, options = {})
+        super
+        relation_form_set name, options
+        forms.delete("#{name}_id")
+      end
       def referenced_in(name, options = {})
         super
         relation_form_set name, options
         forms.delete("#{name}_id")
+      end
+
+      def has_many(name, options = {})
+        super
+        relation_form_set name, options
+        forms.delete("#{name.to_s.singularize}_ids")
       end
       def references_many(name, options = {})
         super
         relation_form_set name, options
         forms.delete("#{name.to_s.singularize}_ids")
       end
+
       def embedded_in(name, options = {})
         super
         relation_form_set name, options
         forms.delete("#{name}_id")
       end
       def embeds_many(name, options = {})
+        super
+        relation_form_set name, options
+        forms.delete("#{name.to_s.singularize}_ids")
+      end
+
+      def has_and_belongs_to_many(name, options = {})
         super
         relation_form_set name, options
         forms.delete("#{name.to_s.singularize}_ids")
