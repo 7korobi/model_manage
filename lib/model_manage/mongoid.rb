@@ -2,10 +2,10 @@ module Mongoid
   module Document
     def self.included(base)
       Rails.add_child(:models, base)
-      p " #{base} include #{self}"
+      puts " #{base} include #{self}"
       def base.inherited(child)
         Rails.add_inherit(:models, child)
-        p " #{child} inherit #{self}"
+        puts " #{child} inherit #{self}"
       end
 
       base.class_eval do

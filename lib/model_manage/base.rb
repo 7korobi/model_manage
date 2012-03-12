@@ -50,7 +50,12 @@ module ModelManage
         form_attributes.merge!(validates)
       end
 
-      forms[name] = OpenStruct.new(form_attributes) unless options[:hidden]
+
+      if options[:hidden]
+        forms.delete(name)
+      else
+        forms[name] = OpenStruct.new(form_attributes)
+      end
     end
 
     def relation_form_set(name, options = {})
