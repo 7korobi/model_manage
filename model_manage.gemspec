@@ -36,6 +36,7 @@ Gem::Specification.new do |s|
     "model_manage.gemspec",
     "test/helper.rb",
     "test/test_model_manage.rb",
+    "vendor/assets/javascripts/model_manage.js",
     "vendor/assets/javascripts/model_manage/page_btn.js.coffee",
     "vendor/assets/javascripts/model_manage/params.js.coffee"
   ]
