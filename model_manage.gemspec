@@ -23,6 +23,9 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "app/assets/javascripts/model_manage.js",
+    "app/assets/javascripts/model_manage/page_btn.js.coffee",
+    "app/assets/javascripts/model_manage/params.js.coffee",
     "lib/.DS_Store",
     "lib/model_manage.rb",
     "lib/model_manage/active_record.rb",
@@ -35,10 +38,7 @@ Gem::Specification.new do |s|
     "lib/model_manage/rails.rb",
     "model_manage.gemspec",
     "test/helper.rb",
-    "test/test_model_manage.rb",
-    "vendor/assets/javascripts/model_manage.js",
-    "vendor/assets/javascripts/model_manage/page_btn.js.coffee",
-    "vendor/assets/javascripts/model_manage/params.js.coffee"
+    "test/test_model_manage.rb"
   ]
   s.homepage = "http://github.com/7korobi/model_manage"
   s.licenses = ["MIT"]
