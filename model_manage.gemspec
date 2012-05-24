@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "model_manage"
-  s.version = "0.1.10"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["\u{306a}\u{306a}\u{3053}\u{308d}\u{3073}"]
-  s.date = "2012-03-12"
+  s.date = "2012-05-24"
   s.description = "\u{30e2}\u{30c7}\u{30eb}\u{3001}\u{30d5}\u{30a3}\u{30fc}\u{30eb}\u{30c9}\u{3068}\u{3044}\u{3063}\u{305f}\u{60c5}\u{5831}\u{3078}\u{7c21}\u{5358}\u{30a2}\u{30af}\u{30bb}\u{30b9}\u{3059}\u{308b}\u{3053}\u{3068}\u{3092}\u{76ee}\u{7684}\u{306b}\u{958b}\u{767a}\u{3057}\u{3066}\u{3044}\u{307e}\u{3059}\u{3002}"
   s.email = "7korobi@gmail.com"
   s.extra_rdoc_files = [
@@ -35,34 +35,39 @@ Gem::Specification.new do |s|
     "lib/model_manage/rails.rb",
     "model_manage.gemspec",
     "test/helper.rb",
-    "test/test_model_manage.rb"
+    "test/test_model_manage.rb",
+    "vendor/assets/javascripts/model_manage/page_btn.js.coffee",
+    "vendor/assets/javascripts/model_manage/params.js.coffee"
   ]
   s.homepage = "http://github.com/7korobi/model_manage"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.11"
+  s.rubygems_version = "1.8.23"
   s.summary = "\u{30e2}\u{30c7}\u{30eb}\u{7ba1}\u{7406}\u{60c5}\u{5831}\u{4ed8}\u{4e0e}"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<jquery-rails>, [">= 0"])
+      s.add_runtime_dependency(%q<twitter-bootstrap-rails>, [">= 0"])
       s.add_development_dependency(%q<simple_form>, [">= 0"])
-      s.add_development_dependency(%q<mongoid>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
+      s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
     else
+      s.add_dependency(%q<jquery-rails>, [">= 0"])
+      s.add_dependency(%q<twitter-bootstrap-rails>, [">= 0"])
       s.add_dependency(%q<simple_form>, [">= 0"])
-      s.add_dependency(%q<mongoid>, [">= 0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
+      s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_dependency(%q<simplecov>, [">= 0"])
     end
   else
+    s.add_dependency(%q<jquery-rails>, [">= 0"])
+    s.add_dependency(%q<twitter-bootstrap-rails>, [">= 0"])
     s.add_dependency(%q<simple_form>, [">= 0"])
-    s.add_dependency(%q<mongoid>, [">= 0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
+    s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
     s.add_dependency(%q<simplecov>, [">= 0"])
   end
