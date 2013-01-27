@@ -20,16 +20,11 @@ module ModelManage
       false
     end
 
-    def field(name, options = {})
+    def validates_length_of(name, options = {})
       super
-
       min =   1
       validates = {}
       validates[:in] = options.delete(:in)  || options.delete(:within)
-      if options[:limit] && (! validates[:in])
-        validates[:in] = (min..options.delete(:limit)) 
-      end
-
       validates[:allow_nil  ] = options.delete(:allow_nil)   || false
       validates[:allow_blank] = options.delete(:allow_blank) || false
 
@@ -38,18 +33,11 @@ module ModelManage
         owner:   self,
         name:    name.to_s,
         type:    options[:type] || String,
-        limit:   nil,
+        limit:   validates[:in].max,
         null:    null_ok,
         primary: key?(name),
         scale:   nil
       }
-
-      if validates[:in].present?
-        validates_length_of name, validates
-        form_attributes[:limit] = validates[:in].max
-        form_attributes.merge!(validates)
-      end
-
 
       if options[:hidden]
         forms.delete(name)
